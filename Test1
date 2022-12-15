@@ -1,1 +1,89 @@
+// palindrome
+
+import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+		Scanner sc = new  Scanner(System.in);
+        int n =sc.nextInt();
+        int reverse=0,remainder=0,original;
+        original=n;
+        while(n!=0){
+            remainder= n%10;
+            reverse = reverse*10 + remainder;
+            n/=10;
+        }
+        if(original==reverse)
+            System.out.print("true");
+        else
+            System.out.print("false");
+	}
+}
+
+
+
+
+*************************************************************************************************************
+
+
+//check Ap
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int apLimit= sc.nextInt();
+        int arr[] = new int[apLimit];
+        for(int i=0;i<apLimit;i++){
+            arr[i]= sc.nextInt();
+        }
+        int k = checkap(arr,apLimit);
+        if(k==1)
+            System.out.println("true");
+        else
+            System.out.println("false");
+    }
+
+    public static int checkap(int arr[], int limit){
+        if(limit<3)
+            return -1;
+        int diff = arr[1]-arr[0];
+        int output=1;
+        for(int i=1;i<limit;i++){
+            for(int j= i-1; j<i;j++){
+                if(arr[i]-arr[j]!=diff) {
+                    output = -1;
+                    break;
+                }
+
+
+            }
+        }
+        return output;
+    }
+}
+
+***********************************************************************************************************
+
+//Number Star pattern 1
+
+import java.util.Scanner;
+public class runner {
+
+	public static void main(String[] args) {
+		// Write your code here
+	 Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=1;i<=n;i++){
+            for(int j=n;j>=1;j--){
+                if(j==i)
+                    System.out.print("*");
+                else
+                    System.out.print(j);
+            }
+            System.out.println();
+        }
+	}
+}
 
